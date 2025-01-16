@@ -54,9 +54,7 @@ stage('Update Deployment File') {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    ls -a 
-                    cd ..
-                    git clone https://github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git .
+                    
                     git config user.email "danialdhinesh@gmail.com"
                     git config user.name "DanielDhinesh"
                     BUILD_NUMBER=${BUILD_NUMBER}
